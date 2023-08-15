@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Tareas de práctica</title>
+    <enlace rel=”hoja de estilo” href=”https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css”rel=”nofollow” integridad=”sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I” crossorigin=”anónimo”></enlace>
+    <link rel="stylesheet" href='../styles/fechas.css'>
+</head>
+
+  <body>
+    <main>
+        <div class="card">
+            <section>
+              <div class="tile-section">
+                <h3>Fecha que desea verificar</h3>
+              </div>
+              <div>
+                <input type='number'class="form-input" placeholder="Día" id="dia">
+                <input type="number" class="form-input" placeholder="Mes" id="mes">
+                <input type="number" class="form-input" placeholder="Año" id="anio">
+              </div>
+            </section>
+            <section class="button-section">
+              <button onclick="date(document.getElementById('dia').value,
+                                    document.getElementById('mes').value,
+                                    document.getElementById('anio').value)" 
+                      class="button">Calcular</button>
+            </section>
+            <section class="advise-section">
+              <h3 id="respuesta_Fechas"></h3>
+            </section>
+        </div>
+    </main>
+    <script src="../js/funciones.js"></script>
+  </body>
+</html>
