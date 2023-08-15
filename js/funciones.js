@@ -29,6 +29,21 @@ function date(d,m,a){
   return 
 }  
 
+function validation_number(d,m,a){
+  if (d && m && a){
+    if (d>31 || m>12 || a<0 ){
+      document.getElementById('respuesta_Fechas').innerHTML = 'Verifique que las fechas sean correctas'
+    }
+    else{
+      date(d,m,a)
+    }
+  }
+  else{
+    document.getElementById('respuesta_Fechas').innerHTML = 'Ingrese solamente valores numéricos enteros'
+  }
+  
+}
+
 
 function start_switch() {
   Element_one = document.getElementById('start');
@@ -47,15 +62,15 @@ let flag= {
  
 function mayor(){
   flag.number = Math.floor(flag.number+(101-flag.number)/2)
-  document.getElementById('answer').innerHTML = 'tu número es ' + flag.number + '?'
+  document.getElementById('answer').innerHTML = 'Tu número es ' + flag.number + '?'
   return console.log(flag.number)
 }
 
 function menor(){
   flag.number = Math.floor(flag.number-(flag.number/2))
-  document.getElementById('answer').innerHTML = 'tu número es ' + flag.number + '?'
+  document.getElementById('answer').innerHTML = 'Tu número es ' + flag.number + '?'
 }
 
 function igual(){
-  document.getElementById('answer').innerHTML = 'excelente, entoces tu número es ' + flag.number + '!'
+  document.getElementById('answer').innerHTML = 'Excelente, entoces tu número es ' + flag.number + '!'
 }
