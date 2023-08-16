@@ -39,7 +39,6 @@ body {
 }
 
 .button{
-  display: flex;
   border: none;
   background-color: white;
   padding: 20px;

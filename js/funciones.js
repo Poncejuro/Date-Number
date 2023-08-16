@@ -1,11 +1,11 @@
-
+//verify year
 const esBisiesto = (year) => {
   return (year % 400 === 0) ? true : 
   			(year % 100 === 0) ? false : 
   				year % 4 === 0
 }
 
-
+//verify day
 function date(d,m,a){
   //https://es.wikibooks.org/wiki/Algoritmia/Algoritmo_para_calcular_el_día_de_la_semana  Documentación
   let mt = [0, 3, 4, 0, 2, 5, 0, 3, 6, 1, 4, 6]
@@ -29,6 +29,7 @@ function date(d,m,a){
   return 
 }  
 
+//validation input
 function validation_number(d,m,a){
   if (d && m && a){
     if (d>31 || m>12 || a<0 ){
@@ -44,7 +45,7 @@ function validation_number(d,m,a){
   
 }
 
-
+//show and hide DOM parts
 function start_switch() {
   Element_one = document.getElementById('start');
   Element_one.style.display = 'none';
@@ -55,19 +56,30 @@ function start_switch() {
 }
 
 
-let flag= {
+//this functions save data to change with others functios 
+let flag = {
   number: 50
 };
 
+let flagMin = {
+  number: 0
+}
+
+let flagMax = {
+  number: 100
+}
  
+//funtions for the binary search
 function mayor(){
-  flag.number = Math.floor(flag.number+(101-flag.number)/2)
+  flagMin.number = flag.number
+  flag.number = Math.floor(flag.number+(flagMax.number-flag.number)/2)
   document.getElementById('answer').innerHTML = 'Tu número es ' + flag.number + '?'
   return console.log(flag.number)
 }
 
 function menor(){
-  flag.number = Math.floor(flag.number-(flag.number/2))
+  flagMax.number = flag.number
+  flag.number = Math.floor(flag.number-(-flagMin.number+flag.number)/2)
   document.getElementById('answer').innerHTML = 'Tu número es ' + flag.number + '?'
 }
 
