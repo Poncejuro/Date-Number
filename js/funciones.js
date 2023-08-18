@@ -16,7 +16,10 @@ function date(d,m,a){
     case false:
       module = mf[m-1]
   }
-  let day = Math.round(((a-1)%7 + ((a-1)/4-(3*((a-1)/100+1)/4))%7 + module + d%7)%7)
+
+  let partOne = Math.floor((a-1)%7)
+  let partTwo = Math.floor(((a-1)/4-(3*((a-1)/100+1)/4))%7)
+  let day = Math.round((partOne + partTwo + module + d%7)%7)
   let advise = ['El día es Lunes y es laborable',
              'El día es Martes y es laborable',
              'El día es Miércoles y es laborable',
